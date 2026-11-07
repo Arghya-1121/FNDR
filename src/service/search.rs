@@ -13,7 +13,7 @@ pub struct Applications {
 }
 
 #[derive(Debug)]
-pub struct Application_Database {
+pub struct ApplicationDatabase {
     pub applications: Option<Vec<Applications>>,
     pub application_list: Option<Vec<PathBuf>>,
 }
@@ -54,7 +54,7 @@ impl Location {
     }
 }
 
-impl Application_Database {
+impl ApplicationDatabase {
     fn list_files() -> Vec<PathBuf> {
         let directories = Location::applications();
         let mut files: Vec<PathBuf> = Vec::new();
@@ -99,7 +99,7 @@ impl Application_Database {
     }
 
     pub fn app_data() -> Vec<Applications> {
-        let list_files = Application_Database::list_files();
+        let list_files = ApplicationDatabase::list_files();
         get_app_details(list_files)
     }
 }
